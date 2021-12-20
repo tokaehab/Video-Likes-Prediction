@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
+from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 import seaborn as sns
 
@@ -11,15 +12,6 @@ def pre_processing():
 
     # Drop rows of blank values
     data.dropna(how='any', inplace=True)
-
-    # Handle date-time format
-    data['trending_date'] = pd.to_datetime(data['trending_date'], format='%y.%d.%m')
-    data['publish_time'] = pd.to_datetime(data['publish_time'], format='%Y-%m-%dT%H:%M:%S.%fZ')
-
-    # Split date into 2 columns
-    data.insert(5, 'publish_date', data['publish_time'].dt.date)
-    data['publish_time'] = data['publish_time'].dt.time
-    data['publish_date'] = pd.to_datetime(data['publish_date'])
 
     # Encode features
     data["video_id"] = feature_encoder(data["video_id"])
@@ -32,24 +24,29 @@ def pre_processing():
     data["VideoPopularity"] = feature_encoder(data["VideoPopularity"])
 
     # Correlation matrix to help us in features selection
-    columns_of_interest = ['views', 'VideoPopularity', 'comment_count', 'channel_title', 'category_id']
-    corr_matrix = data[columns_of_interest].corr()
-    print("Correlation Matrix:\n", corr_matrix)
-    print("-----------------------------------------------------------------------------\n\n")
+    # columns_of_interest = ['views', 'VideoPopularity', 'comment_count', 'channel_title', 'category_id']
+    # corr_matrix = data[columns_of_interest].corr()
+    # print("Correlation Matrix:\n", corr_matrix)
+    # print("-----------------------------------------------------------------------------\n\n")
 
-    # Get features with more than 50% correlation with VideoPopularity using heatmap
     corr = data.corr()
-    best_features = corr.index[abs(corr['VideoPopularity']) > 0.02]  # TODO:Threshold?
+    best_features = corr.index[abs(corr['VideoPopularity']) > 0.02]
     best_features = best_features.delete(-1)
     X = data[best_features]
-    plt.subplots(figsize=(6, 4))
-    top_corr = data[best_features].corr()
-    sns.heatmap(top_corr, annot=True)
-    plt.show()
-    # Extract features and output
-    # scaler = MinMaxScaler()
-    # scaled = scaler.fit_transform(data)
-    return data, X
+
+    # plt.subplots(figsize=(6, 4))
+    # top_corr = data[best_features].corr()
+    # sns.heatmap(top_corr, annot=True)
+    # plt.show()
+
+    # X = data[['views', 'comment_count']].iloc[:, :]
+    X = feature_scaling(X, 0, 100)
+    Y = data[['VideoPopularity']].iloc[:, :]
+    Y = feature_scaling(Y, 0, 100)
+    Y=Y.flatten()
+    X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.20, random_state=1)
+
+    return X_train, X_test, y_train, y_test
 
 
 def feature_scaling(X, a, b):

@@ -1,19 +1,18 @@
-from sklearn.model_selection import train_test_split
+import time
 from sklearn.metrics import accuracy_score
 from sklearn.linear_model import LogisticRegression
 from helper_Functions import *
 
-data, X = pre_processing()
-# X = data[['views', 'comment_count']].iloc[:, :]
-X = feature_scaling(X, 0, 100)
-Y = data[['VideoPopularity']].iloc[:, :]
-Y = feature_scaling(Y, 0, 100)
-X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.20, random_state=1)
+X_train, X_test, Y_train, Y_test = pre_processing()
 
-logreg = LogisticRegression()
-logreg.fit(X_train, y_train)
+t0 = time.time()
+logreg = LogisticRegression().fit(X_train, Y_train)
 y_pred = logreg.predict(X_test)
+t1 = time.time()
 
-accuracy = accuracy_score(y_pred, y_test)
-print(accuracy)
+time_Taken = (t1 - t0)
+accuracy = accuracy_score(y_pred, Y_test)
+
+print('Accuracy ', accuracy)
+print('Time Taken ', time_Taken, 'seconds')
 # 0.8201044036942846
