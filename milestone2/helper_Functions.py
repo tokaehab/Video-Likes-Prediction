@@ -24,15 +24,17 @@ def pre_processing():
     data["VideoPopularity"] = feature_encoder(data["VideoPopularity"])
 
     # Correlation matrix to help us in features selection
-    # columns_of_interest = ['views', 'VideoPopularity', 'comment_count', 'channel_title', 'category_id']
-    # corr_matrix = data[columns_of_interest].corr()
-    # print("Correlation Matrix:\n", corr_matrix)
-    # print("-----------------------------------------------------------------------------\n\n")
-
-    corr = data.corr()
-    best_features = corr.index[abs(corr['VideoPopularity']) > 0.02]
+    corr_matrix = data.corr()
+    best_features = corr_matrix.index[abs(corr_matrix['VideoPopularity']) > 0.04]
     best_features = best_features.delete(-1)
     X = data[best_features]
+
+    print("Correlation Matrix:\n", corr_matrix)
+    print("-----------------------------------------------------------------------------")
+
+    # corr_matrix.to_csv('data.csv')
+    print(best_features)
+    quit()
 
     # plt.subplots(figsize=(6, 4))
     # top_corr = data[best_features].corr()
@@ -43,7 +45,7 @@ def pre_processing():
     X = feature_scaling(X, 0, 100)
     Y = data[['VideoPopularity']].iloc[:, :]
     Y = feature_scaling(Y, 0, 100)
-    Y=Y.flatten()
+    Y = Y.flatten()
     X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.20, random_state=1)
 
     return X_train, X_test, y_train, y_test
