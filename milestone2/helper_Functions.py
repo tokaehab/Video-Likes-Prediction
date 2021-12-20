@@ -29,12 +29,10 @@ def pre_processing():
     best_features = best_features.delete(-1)
     X = data[best_features]
 
-    print("Correlation Matrix:\n", corr_matrix)
-    print("-----------------------------------------------------------------------------")
+    # print("Correlation Matrix:\n", corr_matrix)
+    # print("-----------------------------------------------------------------------------")
 
-    # corr_matrix.to_csv('data.csv')
-    print(best_features)
-    quit()
+    corr_matrix.to_csv('Correlation Matrix.csv')
 
     # plt.subplots(figsize=(6, 4))
     # top_corr = data[best_features].corr()
