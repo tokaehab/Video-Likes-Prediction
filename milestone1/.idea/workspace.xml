@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="704725d4-5f33-47ed-9d65-ea16e65f8b43" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model1.sav" beforeDir="false" afterPath="$PROJECT_DIR$/Model1.sav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model2.sav" beforeDir="false" afterPath="$PROJECT_DIR$/Model2.sav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testScript.py" beforeDir="false" afterPath="$PROJECT_DIR$/testScript.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,6 +145,7 @@
       <updated>1638883934118</updated>
       <workItem from="1638883942928" duration="9948000" />
       <workItem from="1640629844062" duration="323000" />
+      <workItem from="1640630478828" duration="126000" />
     </task>
     <servers />
   </component>
@@ -165,22 +161,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="121" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1640630152720" />
-    <state width="1323" height="261" key="GridCell.Tab.0.bottom" timestamp="1640630190130">
+    <state width="1323" height="261" key="GridCell.Tab.0.bottom" timestamp="1640630605456">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="261" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1640630190130" />
-    <state width="1323" height="261" key="GridCell.Tab.0.center" timestamp="1640630190129">
+    <state width="1323" height="261" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1640630605456" />
+    <state width="1323" height="261" key="GridCell.Tab.0.center" timestamp="1640630605456">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="261" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1640630190129" />
-    <state width="1323" height="261" key="GridCell.Tab.0.left" timestamp="1640630190129">
+    <state width="1323" height="261" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1640630605456" />
+    <state width="1323" height="261" key="GridCell.Tab.0.left" timestamp="1640630605456">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="261" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1640630190129" />
-    <state width="1323" height="261" key="GridCell.Tab.0.right" timestamp="1640630190129">
+    <state width="1323" height="261" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1640630605456" />
+    <state width="1323" height="261" key="GridCell.Tab.0.right" timestamp="1640630605456">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="261" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1640630190129" />
+    <state width="1323" height="261" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1640630605456" />
     <state x="186" y="9" key="SettingsEditor" timestamp="1638884627231">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -189,7 +185,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Milestone1$mainFile.coverage" NAME="mainFile Coverage Results" MODIFIED="1638893600600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/milestone1$Model2.coverage" NAME="Model2 Coverage Results" MODIFIED="1640630111805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/milestone1$testScript.coverage" NAME="testScript Coverage Results" MODIFIED="1640630166257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/milestone1$testScript.coverage" NAME="testScript Coverage Results" MODIFIED="1640630586022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/milestone1$Model1.coverage" NAME="Model1 Coverage Results" MODIFIED="1640630032544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

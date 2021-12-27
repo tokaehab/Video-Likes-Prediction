@@ -16,9 +16,9 @@ def feature_scaling(X,a,b):
 data = pd.read_csv("VideoLikesDataset.csv")
 
 #Handling missing data
-data['views'].fillna((data['views'].mean()), inplace=True)
-data['comment_count'].fillna((data['comment_count'].mean()), inplace=True)
-data['likes'].fillna((data['likes'].mean()), inplace=True)
+data['views'].fillna(int((data['views'].mean())), inplace=True)
+data['comment_count'].fillna(int((data['comment_count'].mean())), inplace=True)
+data['likes'].fillna(int((data['likes'].mean())), inplace=True)
 
 #Extract features and output
 X = data[['views', 'comment_count']].iloc[:,:]
