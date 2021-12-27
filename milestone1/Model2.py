@@ -75,7 +75,6 @@ poly_model = linear_model.LinearRegression()
 poly_model.fit(X_train_poly, y_train)
 filename = 'Model2.sav'
 pickle.dump(poly_model, open(filename, 'wb'))
-y_train_predicted = poly_model.predict(X_train_poly)
 prediction = poly_model.predict(poly_features.fit_transform(X_test))
 t3 = time.time()
 print('\nPolynomial regression model values:')
