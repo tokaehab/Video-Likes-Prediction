@@ -69,7 +69,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.30, random
 
 #Polynomial regression
 t2 = time.time()
-poly_features = PolynomialFeatures(degree=3)
+poly_features = PolynomialFeatures(degree=4)
 X_train_poly = poly_features.fit_transform(X_train)
 poly_model = linear_model.LinearRegression()
 poly_model.fit(X_train_poly, y_train)

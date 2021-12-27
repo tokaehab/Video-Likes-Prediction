@@ -34,7 +34,7 @@ print('Multiple linear regression model values:')
 print('Mean Square Error of linear regression model', metrics.mean_squared_error(np.asarray(y_test), prediction1))
 print('R2 score', r2_score(np.asarray(y_test), prediction1))
 
-poly_features = PolynomialFeatures(degree=3)
+poly_features = PolynomialFeatures(degree=4)
 X_poly = poly_features.fit_transform(X)
 filename2 = 'Model2.sav'
 loaded_model2 = pickle.load(open(filename2, 'rb'))
