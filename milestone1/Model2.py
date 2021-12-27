@@ -8,6 +8,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import time
+import pickle
 
 def feature_scaling(X,a,b):
     X = np.array(X)
@@ -77,10 +78,12 @@ X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.30, random
 
 #Polynomial regression
 t2 = time.time()
-poly_features = PolynomialFeatures(degree=6)
+poly_features = PolynomialFeatures(degree=3)
 X_train_poly = poly_features.fit_transform(X_train)
 poly_model = linear_model.LinearRegression()
 poly_model.fit(X_train_poly, y_train)
+filename = 'Model2.sav'
+pickle.dump(poly_model, open(filename, 'wb'))
 y_train_predicted = poly_model.predict(X_train_poly)
 prediction = poly_model.predict(poly_features.fit_transform(X_test))
 t3 = time.time()
@@ -91,4 +94,3 @@ print('Mean Square Error of polynomial regression model', metrics.mean_squared_e
 print('R2 score', r2_score(np.asarray(y_test), prediction))
 print('Time taken', 1000*(t3 - t2))
 print("-----------------------------------------------------------------------------")
-

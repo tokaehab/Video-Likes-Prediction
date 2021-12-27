@@ -8,6 +8,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import time
+import pickle
 
 def feature_scaling(X,a,b):
     X = np.array(X)
@@ -79,6 +80,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.30, random
 t0 = time.time()
 cls = linear_model.LinearRegression()
 fitModel = cls.fit(X_train,y_train)
+filename = 'Model1.sav'
+pickle.dump(fitModel, open(filename, 'wb'))
 prediction = cls.predict(X_test)
 t1 = time.time()
 print('Linear regression model values:')
