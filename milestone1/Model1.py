@@ -2,6 +2,7 @@ from sklearn import linear_model
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler, PolynomialFeatures
 from sklearn import metrics
+from sklearn.metrics import r2_score
 import numpy as np
 import pandas as pd
 import seaborn as sns
@@ -22,6 +23,7 @@ def feature_encoder(X):
     return X
 
 
+print('-----> Model 1 - Milestone 1:\n')
 #Read data
 data = pd.read_csv("VideoLikesDataset.csv")
 
@@ -83,5 +85,6 @@ print('Linear regression model values:')
 print('Co-efficient of linear regression',cls.coef_)
 print('Intercept of linear regression model',cls.intercept_)
 print('Mean Square Error of linear regression model', metrics.mean_squared_error(np.asarray(y_test), prediction))
+print('R2 score', r2_score(np.asarray(y_test), prediction))
 print('Time taken', 1000*(t1 - t0))
 print("-----------------------------------------------------------------------------")
