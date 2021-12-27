@@ -37,15 +37,6 @@ data = data[data['video_error_or_removed'] == False]
 #Drop Videos with no name id -> #NAMES?
 data = data[data['video_id'] != "#NAME?"]
 
-#Handle date-time format
-data['trending_date'] = pd.to_datetime(data['trending_date'], format='%y.%d.%m')
-data['publish_time'] = pd.to_datetime(data['publish_time'], format='%Y-%m-%dT%H:%M:%S.%fZ')
-
-#Split date into 2 columns
-data.insert(5, 'publish_date', data['publish_time'].dt.date)
-data['publish_time'] = data['publish_time'].dt.time
-data['publish_date'] = pd.to_datetime(data['publish_date'])
-
 #Encode features
 data["video_id"] = feature_encoder(data["video_id"])
 data["title"] = feature_encoder(data["title"])
